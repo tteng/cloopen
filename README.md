@@ -32,10 +32,10 @@ Or install it yourself as:
 
 5. 静静等待云通讯的管理员审核
 
-    * App 通过审核
-    * 短信模板通过审核
+  * App 通过审核
+  * 短信模板通过审核
 
-6. 在你的项目中设置以下配置文件
+6. 通过审核后，在你的项目中设置以下配置文件
 
 * ruby project
 
@@ -51,6 +51,7 @@ Cloopen.sms_uri = "https://app.cloopen.com:8883/2013-12-26/Accounts/"
 ```ruby
   rails g cloopen
 ```
+
 将生成一个cloopen_setup.rb到config/initialiers/目录下
 
 ```ruby
