@@ -43,7 +43,7 @@ Or install it yourself as:
 Cloopen.account_sid = "Your Yuntongxun Account Sid"
 Cloopen.auth_token = "Your Yuntongxun Auth token"
 Cloopen.app_id = "Your Yuntongxun App id"
-
+Cloopen.sms_uri = "https://app.cloopen.com:8883/2013-12-26/Accounts/"
 ```
 
 * rails project
@@ -51,7 +51,17 @@ Cloopen.app_id = "Your Yuntongxun App id"
 ```ruby
   rails g cloopen
 ```
-将生成一个cloopen_setup.rb到config/initialiers/目录下，修改相应参数即可
+将生成一个cloopen_setup.rb到config/initialiers/目录下
+
+```ruby
+  Cloopen.setup do |config|
+    config.account_sid = "YOUR_ACCOUNT_SID"
+    config.auth_token  = "YOUR_AUTH_TOKEN"
+    config.app_id = "YOUR_APP_ID"
+    config.sms_uri = Rails.env.production? ? "https://app.cloopen.com:8883/2013-12-26/Accounts/" : 
+                                               "https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/"
+  end
+```
 
 ### 发送消息
 
